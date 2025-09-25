@@ -36,3 +36,16 @@ export const getAllCompanions = async ({limit = 10, page = 1, topic, subject}: G
 
     return companions
 }
+
+export const getCompanion = async (id: string) => {
+    const supabase = createSupabaseClient()
+
+    const {data, error} = await supabase
+        .from('companions')
+        .select()
+        .eq('id', id)
+
+    if (error) return console.error(`Error getting companion: ${error?.message}`)
+
+    return data[0]
+}
