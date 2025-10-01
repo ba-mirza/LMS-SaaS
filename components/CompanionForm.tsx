@@ -181,7 +181,13 @@ const CompanionForm = () => {
                         <FormItem>
                             <FormLabel>Estimated session duration in minutes</FormLabel>
                             <FormControl>
-                                <Input type="number" className="input" placeholder="15" {...field} />
+                                <Input
+                                    type="number"
+                                    className="input"
+                                    placeholder="15"
+                                    {...field}
+                                    onChange={(e) => field.onChange(e.target.valueAsNumber)}
+                                />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
