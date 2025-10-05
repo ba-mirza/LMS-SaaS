@@ -7,13 +7,13 @@ import SearchInput from "@/components/SearchInput";
 import SubjectFilter from "@/components/SubjectFilter";
 
 const CompanionLibrary = async ({searchParams}: SearchParams) => {
-  const filters = await searchParams
-  const topic = filters.topic ? filters.topic : ''
-  const subject = filters.subject ? filters.subject : ''
+    const filters = await searchParams
+    const topic = filters.topic ? filters.topic : ''
+    const subject = filters.subject ? filters.subject : ''
 
-  const companions = await getAllCompanions({topic, subject})
+    const companions = await getAllCompanions({topic, subject})
 
-  return (
+    return (
       <main>
         <section className="flex justify-between gap-4 max-sm:flex-col">
           <h1>Companion Library</h1>
